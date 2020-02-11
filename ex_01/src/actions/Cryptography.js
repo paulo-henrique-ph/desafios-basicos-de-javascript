@@ -1,6 +1,6 @@
-const { hash, compare, genSaltSync } = require('bcrypt');
+const { hash, compare, genSalt } = require('bcrypt');
 
-const encryptPassword = async ({ password }) => hash(password, genSaltSync());
+const encryptPassword = async ({ password }) => hash(password, await genSalt());
 
 const compareEncrypt = async (password, hashed) => compare(password, hashed);
 
