@@ -4,4 +4,4 @@ const UserSchema = {
   password: '',
 };
 
-export default UserSchema;
+module.exports = UserSchema;

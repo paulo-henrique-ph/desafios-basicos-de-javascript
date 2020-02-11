@@ -1,7 +1,6 @@
-import { test, expect } from 'jest';
-import { compareEncrypt, encryptPassword } from '../../src/actions/Cryptography';
+const { compareEncrypt, encryptPassword } = require('../../src/actions/Cryptography');
 
-test('return a hashed string of the password', () => {
-  expect(encryptPassword({ password: '123456' }))
+test('return a hashed string of the password', async () => {
+  expect(await encryptPassword({ password: '123456' }))
     .toBe('...');
 });
