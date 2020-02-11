@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "babel-node src/index.js",
     "test": "jest",
     "lint": "eslint src"
   },
@@ -15,6 +16,9 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
     "jest": "^25.1.0"
+  },
+  "babel": {
+    "presets": ["env"]
   },
   "dependencies": {
     "bcrypt": "^3.0.8"
