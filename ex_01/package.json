@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node src/index.js",
+    "start": "node src/index.js",
     "test": "jest",
     "lint": "eslint src"
   },
