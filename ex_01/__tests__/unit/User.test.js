@@ -1,17 +1,22 @@
 const UserSchema = require('../../src/models/User');
-const { setName, setEmail, setPassword } = require('../../src/actions/User');
+const { User } = require('../../src/actions/User');
 
-test('Set the username', () => {
-  expect(setName(UserSchema)('foo'))
-    .toBe('foo');
-});
+describe('User functions', () => {
+  it('Set the username', (done) => {
+    expect(User.setName(UserSchema)('foo'))
+      .toBe('foo');
+    done();
+  });
 
-test('Set the email', () => {
-  expect(setEmail(UserSchema)('foo@email.com'))
-    .toBe('foo@email.com');
-});
+  it('Set the email', (done) => {
+    expect(User.setEmail(UserSchema)('foo@email.com'))
+      .toBe('foo@email.com');
+    done();
+  });
 
-test('Set the password', () => {
-  expect(setPassword(UserSchema)('123456'))
-    .toBe('...');
+  it('Set the password', async (done) => {
+    expect(await User.setPassword(UserSchema)('123456'))
+      .toEqual(expect.any(String));
+    done();
+  });
 });
